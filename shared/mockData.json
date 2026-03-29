@@ -1,0 +1,45 @@
+{
+  "auth": {
+    "currentUser": {
+      "id": "u1",
+      "name": "Dev User",
+      "role": "student",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dev"
+    },
+    "isAuthenticated": true
+  },
+  "dashboard": {
+    "stats": [
+      { "label": "Modules Completed", "value": 12, "trend": "+2" },
+      { "label": "Coding Streak", "value": "5 Days", "trend": "Stable" },
+      { "label": "Avg. Accuracy", "value": "88%", "trend": "+5%" }
+    ],
+    "recentActivity": [
+      { "id": "a1", "type": "quiz", "title": "Neural Networks 101", "date": "2026-03-28" },
+      { "id": "a2", "type": "code", "title": "Array Manipulation", "date": "2026-03-27" }
+    ]
+  },
+  "aiEditor": {
+    "currentProject": "Python Basics",
+    "files": [
+      { "name": "main.py", "language": "python", "content": "def hello_world():\n    print('Hello, AI Learner!')" },
+      { "name": "utils.py", "language": "python", "content": "import math\n\ndef square(x):\n    return x * x" }
+    ],
+    "aiSuggestions": [
+      "Try using a list comprehension here.",
+      "Consider adding a docstring to your function."
+    ]
+  },
+  "activeLearning": {
+    "currentModule": "Deep Learning Fundamentals",
+    "progress": 65,
+    "quiz": [
+      {
+        "id": "q1",
+        "question": "What is the purpose of a Softmax activation function?",
+        "options": ["Binary classification", "Normalizing outputs into probabilities", "Adding non-linearity to hidden layers"],
+        "correct": 1
+      }
+    ]
+  }
+}
