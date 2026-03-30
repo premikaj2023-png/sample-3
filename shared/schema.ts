@@ -17,5 +17,18 @@ export const AIHintSchema = z.object({
   relevantLine: z.number().optional(),
 });
 
+export interface User {
+  id: string;
+  name: string;
+  role: 'student' | 'admin';
+}
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correct: number;
+}
+
 export type Challenge = z.infer<typeof ChallengeSchema>;
 export type AIHint = z.infer<typeof AIHintSchema>;
