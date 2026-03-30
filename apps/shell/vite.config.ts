@@ -12,10 +12,10 @@ export default defineConfig({
   resolve: {
     alias: {
       // This allows everyone to use: import { ... } from '@shared/schema'
-      '@shared': resolve(__dirname, './shared'),
+      '@shared': resolve(__dirname, '../../shared'),
       
       // Optional: If you want to alias your friends' apps for easy importing
-      '@apps': resolve(__dirname, './apps'),
+      '@apps': resolve(__dirname, './apps')
     },
   },
   server: {

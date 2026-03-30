@@ -1,3 +1,4 @@
+import { mockData } from "shared";
 import { z } from "zod";
 
 // The shape of a Coding Challenge
@@ -63,5 +64,7 @@ export interface FullMockData {
     quiz: QuizQuestion[];
   };
 }
+
+// Add this to your shared/index.ts
 export type Challenge = z.infer<typeof ChallengeSchema>;
 export type AIHint = z.infer<typeof AIHintSchema>;
