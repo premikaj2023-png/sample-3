@@ -17,12 +17,27 @@ export const AIHintSchema = z.object({
   relevantLine: z.number().optional(),
 });
 
+// Definitions for the User and Auth
 export interface User {
   id: string;
   name: string;
   role: 'student' | 'admin';
+  avatar: string;
 }
 
+export interface AuthState {
+  currentUser: User;
+  isAuthenticated: boolean;
+}
+
+// Definitions for the Dashboard
+export interface StatCard {
+  label: string;
+  value: string | number;
+  trend: string;
+}
+
+// Definitions for Active Learning / Quizzes
 export interface QuizQuestion {
   id: string;
   question: string;
@@ -30,5 +45,23 @@ export interface QuizQuestion {
   correct: number;
 }
 
+// The "Master" Shape that combines everything
+export interface FullMockData {
+  auth: AuthState;
+  dashboard: {
+    stats: StatCard[];
+    recentActivity: any[];
+  };
+  aiEditor: {
+    currentProject: string;
+    files: Array<{ name: string; language: string; content: string }>;
+    aiSuggestions: string[];
+  };
+  activeLearning: {
+    currentModule: string;
+    progress: number;
+    quiz: QuizQuestion[];
+  };
+}
 export type Challenge = z.infer<typeof ChallengeSchema>;
 export type AIHint = z.infer<typeof AIHintSchema>;
