@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
+import AuthPage from '../../features/auth/AuthPage';
 
 // This is where you will eventually import your friends' apps
 const CodingChallenge = () => <div>Coding Challenge Loading...</div>;
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/challenges" element={<CodingChallenge />} />
+        <Route path="/login" element={<AuthPage />} />
       </Routes>
     </BrowserRouter>
   );

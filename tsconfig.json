@@ -19,7 +19,8 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["shared/*"],
+      "@shared": ["../../shared/index.ts"],
+      "@shared/*": ["../../shared/*"],
       "react": ["./node_modules/@types/react"],
       "react/jsx-runtime": ["./node_modules/@types/react/jsx-runtime"]
     }

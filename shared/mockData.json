@@ -41,5 +41,21 @@
         "correct": 1
       }
     ]
+  },
+  
+  "theme": {
+  "colors": {
+    "primary": "#3b82f6",
+    "secondary": "#6366f1",
+    "background": "#0f172a",
+    "surface": "#1e293b",
+    "text": "#f8fafc",
+    "error": "#ef4444"
+  },
+  "spacing": {
+    "small": "8px",
+    "medium": "16px",
+    "large": "24px"
   }
+}
 }
