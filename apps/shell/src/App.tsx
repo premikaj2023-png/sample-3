@@ -1,25 +1,30 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import AuthPage from '../../features/auth/AuthPage';
+import DashboardMain from '../../features/dashboard/DashboardMain';
 
-// This is where you will eventually import your friends' apps
-const CodingChallenge = () => <div>Coding Challenge Loading...</div>;
+export default function App() {
+  // Check if the user is logged in from our Mock Auth logic
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
-function App() {
   return (
     <BrowserRouter>
-      <nav style={{ padding: '1rem', background: '#222', color: '#fff' }}>
-        <Link to="/" style={{ color: '#fff', marginRight: '1rem' }}>Home</Link>
-        <Link to="/challenges" style={{ color: '#fff' }}>Challenges</Link>
-      </nav>
-
       <Routes>
+        {/* Landing Page */}
         <Route path="/" element={<Home />} />
-        <Route path="/challenges" element={<CodingChallenge />} />
+
+        {/* Login Page */}
         <Route path="/login" element={<AuthPage />} />
+
+        {/* The Dashboard Route */}
+        <Route 
+          path="/dashboard" 
+          element={isAuthenticated ? <DashboardMain /> : <Navigate to="/login" />} 
+        />
+
+        {/* Catch-all: If they type a random URL, send them Home */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
